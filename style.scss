@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$black: #242424;
+$white: rgb(222, 222, 222);
+$primaryGreen: #76855A;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Montserrat", sans-serif;
+  color: $white;
+}
+
+/* Experience ----------------------- */
+
+.experience {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.exp-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+
+// Preloader
+
+.hidden {
+  display: none;
+}
+
+.preloader {
+  background-color: #D7CCBC;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  opacity: 1;
+  z-index: 999999999999;
+
+  .preloader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: $black;
+        animation: load 1s ease-in-out infinite;
+
+        &:nth-child(2) {
+          animation-delay: 0.1s;
+        }
+        &:nth-child(3) {
+          animation-delay: 0.2s;
+        }
+      }
+    }
+  }
+}
+
+/* Page ----------------------- */
+
+.page {
+  z-index: 99999;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  .page-wrapper {
+    position: relative;
+
+    .animatedis {
+      display: inline-block;
+      transform: translateY(100% );
+    }
+    .intro-text {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      left: 50%;
+      font-size: 16px;
+      font-weight: 500 ;
+      transform: translate(-50%,-50%);
+    }
+
+    .arrow-wrapper {
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      opacity: 0;
+      transform: translate(-50%,-50%);
+      animation: bounce 0.5s ease-in alternate infinite;
+    }
+
+    .section-margin {
+      height: 1000px;
+      width: 100%;
+    }
+  
+    // Hero section -------------------- 
+    .hero {
+      width: 100vw;
+      height: 100vh;
+      color: $black;
+    }
+    
+    .hero-wrapper {
+      position: relative;
+      height: 100%;
+      width: calc(100% - 160px);
+      margin: 0 auto;
+      max-width: 1100px;
+
+      .hero-main {
+        position: absolute;
+        bottom: 50px;
+        
+        h1 {
+          font-size: 64px;
+        }
+        
+        p {
+          font-size: 18px;
+        }
+      }
+
+      .hero-subheading {
+        position: absolute;
+        top: calc(50% - 120px);
+        right: 0;
+  
+        p {
+          font-size: 32px;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    // Section Formating -------------------- 
+    .section {
+      position: relative;
+      width: 50%;
+      padding: 1000px 4%;
+      margin: 0;
+      background-color: $black;
+      overflow: hidden;
+
+      &.left {
+        margin-right: auto;
+        border-top-right-radius: 700px 700px;
+        border-bottom-right-radius: 0px 0px;
+      }
+  
+      &.right {
+        margin-left: auto;
+        border-top-left-radius: 700px 700px;
+        border-bottom-left-radius: 0px 0px;
+      }
+
+      .section-intro-wrapper {
+        position: relative;
+        padding: 20% 5%;
+        border-bottom: 2px solid $white;
+        padding-bottom: 400px;
+
+        .section-number {
+          position: absolute;
+          bottom: 15px;
+          right: 0;
+          color: $white;
+          font-size: 24px;
+        }
+
+        /* Décoration -------------------------- */
+        h2 {
+          position: relative;
+          color: $white;
+
+          .section-title-text {
+            display: block;
+            font-size: 40px;
+            font-weight: 500;
+            transform-origin: left;
+            transform: skewY(25deg);
+            z-index: 5;
+            text-transform: uppercase;
+          }
+
+          .decoration:nth-of-type(2), 
+          .decoration:nth-of-type(3), 
+          .decoration:nth-of-type(4) {
+            position: absolute;
+            display: block;
+            width: 100%;
+            width: 278px;
+            height: 60px;
+            border: 1px solid $white;
+            transform-origin: left;
+            transform: skewY(-25deg);
+          }
+
+          .decoration:nth-of-type(2) {
+            top: 0;
+          }
+
+          .decoration:nth-of-type(3) {
+            top: 80px;
+          }
+
+          .decoration:nth-of-type(4) {
+            top: 80px;
+            transform: skewY(25deg);
+            background-color: $white;
+          }
+        }
+      }
+
+      .section-detail-wrapper {
+        position: relative;
+        padding: 20% 5%;
+
+        h3 {
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 1.8;
+          margin-top: 64px;
+        }
+
+        p {
+          line-height: 2;
+          margin-top: 18px;
+          font-size: 16px;
+        }
+      }
+
+      .progress-wrapper {
+        height: 0;
+        width: 12px;
+        z-index: 99999;
+
+        &-left {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        &-right {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+
+        .progress-bar {
+          background: $primaryGreen;
+          height: 100vh;
+          width: 100%;
+          transform-origin: top center;
+          transform: scaleY(1);
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 968px) {
+  .page {
+    .page-wrapper {
+      .section {
+        width: 100%;
+
+        .progress-wrapper {
+          &-left {
+            right: 0;
+            left: auto;
+          }
+        }
+      }
+
+      .hero-wrapper {
+        width: calc(100% - 60px);
+
+        .hero-main {
+          bottom: 120px;
+          h1 {
+            font-size: 32px;
+          }
+        }
+
+        .hero-subheading {
+          top: 160px;
+          p {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Animation */
+@keyframes bounce {
+   0%{
+    transform: translateY(0);
+   }
+
+   100%{
+    transform: translateY(8px);
+   }
+}
+
+@keyframes load {
+  0%{
+   transform: translateY(0);
+  }
+
+  20%{
+   transform: translateY(-12px);
+  }
+
+  40%{
+   transform: translateY(0);
+  }
+}
